@@ -4,6 +4,8 @@
 #include "funciones.h"
 #define pf printf
 
+
+
 int obtenerEspacioLibre(EPersona lista[]){
     int retorno = -1;
     int i;
@@ -22,7 +24,28 @@ int obtenerEspacioLibre(EPersona lista[]){
     return retorno;
 }
 
-//int buscarPorDni(EPersona lista[], int dni);
+//devuelve el indice del dni encontrado o error
+int buscarPorDni(EPersona lista[], int dni){
+int retorno = -1;
+int i;
+
+if(lista != NULL){
+    for(i=0;i<5;i++){
+            if(lista[i].dni == dni)
+            retorno = dni;
+            break;
+    }
+
+
+}
+else {
+        pf("no se encontro dni");
+
+}
+
+return retorno;
+
+}
 
 
 EPersona nuevaPersona(int indice){
@@ -56,6 +79,8 @@ if(persona != NULL && TAM>0 ){
 }
 
 }
+
+
 
 
 

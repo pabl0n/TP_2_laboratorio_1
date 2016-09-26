@@ -11,6 +11,7 @@ int main()
     int opcion=0;
     EPersona persona [TAM];
     int indice=0;
+    int dni;
 
     initPersona(persona,TAM);
 
@@ -42,6 +43,13 @@ int main()
                         }
 
                 }
+
+                pf ("\n ingrese nro dni a buscar \n ");
+                scanf("%d",&dni);
+                indice = buscarPorDni(persona, dni);
+                pf("\n indice -%d",indice);
+                pf("\n\n");
+
 
                 break;
             case 2:
