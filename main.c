@@ -11,14 +11,15 @@ int main()
     int opcion=0;
     EPersona persona [TAM];
     int indice=0;
-    int dni;
+    //int dni;
+    //int flag1erPersona =0;
 
     initPersona(persona,TAM);
 
 
     while(seguir=='s')
     {
-        printf("1- Agregar persona\n");
+        printf("\n1- Agregar persona\n");
         printf("2- Borrar persona\n");
         printf("3- Imprimir lista ordenada por  nombre\n");
         printf("4- Imprimir grafico de edades\n\n");
@@ -29,34 +30,56 @@ int main()
         switch(opcion)
         {
             case 1:
-                indice = obtenerEspacioLibre(persona);
 
+
+                indice = obtenerEspacioLibre(persona);
+ /*               if(flag1erPersona == 1){
+                        pf("\n Ingrese DNI:\n");
+                        scanf("%d",&dni);
+                        if((buscarPorDni(persona,dni))!=-1){
+                            pf("\nEl DNI de la persona ya se encuentra cargado en el programa.\n");
+                            break;
+                        }
+                        else{
+                            persona[indice].dni = dni;
+                        }
+                }
+
+*/
                 persona[indice] = nuevaPersona (indice);
+
+                //flag1erPersona = 1;
+
+
+                //SOLO PARA PROBAR
 
                 int i;
                 for(i=0;i<TAM;i++){
                         if(persona[i].estado==1){
-                        pf("\nNOMBRE CARGADO %s",persona[i].nombre);
                         pf("\nDNI CARGADO %d",persona[i].dni);
+                        pf("\nNOMBRE CARGADO %s",persona[i].nombre);
                         pf("\nEDAD %d",persona[i].edad);
                         pf("\n\n");
                         }
 
                 }
-
-                pf ("\n ingrese nro dni a buscar \n ");
-                scanf("%d",&dni);
-                indice = buscarPorDni(persona, dni);
-                pf("\n indice -%d",indice);
-                pf("\n\n");
-
+                 //SOLO PARA PROBAR FIN /
 
                 break;
+
             case 2:
+                borrarPersona(persona);
                 break;
+
             case 3:
+                printf("\n  DNI    -      Nombre      -     Edad    ");
+                ordenarPorNombre(persona,TAM);
                 break;
+
             case 4:
+                mostrarGrafico(persona,TAM);
+
+                printf(" <18 \t18-35\t>35\n");
                 break;
             case 5:
                 seguir = 'n';

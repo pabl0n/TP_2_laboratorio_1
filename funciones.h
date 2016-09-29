@@ -28,6 +28,14 @@ int buscarPorDni(EPersona lista[], int dni);
 
 EPersona nuevaPersona(int indice);
 
-void initPersona(EPersona *persona,int TAM);
+void initPersona(EPersona persona[],int TAM);
+
+//void borrarPersona(EPersona lista[], int indice);
+
+void borrarPersona(EPersona lista[]);
+
+void ordenarPorNombre(EPersona lista[],int TAM);
+
+void mostrarGrafico(EPersona lsita[],int TAM);
 
 #endif // FUNCIONES_H_INCLUDED
